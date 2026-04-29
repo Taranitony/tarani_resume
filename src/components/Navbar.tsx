@@ -56,7 +56,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/Tarani_Antony_Cybersecurity_Resume.docx"
+            href="/Tarani_Antony_Resume.pdf"
             download
             style={{
               background: 'linear-gradient(90deg, #22d3ee, #3b82f6)',
