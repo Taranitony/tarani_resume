@@ -10,118 +10,136 @@ export default function ThemeSelector() {
   }
 
   return (
-    <div style={{
-      minHeight: '100vh', display: 'flex', flexDirection: 'column',
-      alignItems: 'center', justifyContent: 'center',
-      background: '#030712', padding: '24px',
-    }}>
-      {/* Glow */}
-      <div style={{
-        position: 'fixed', top: '30%', left: '50%', transform: 'translateX(-50%)',
-        width: 500, height: 500, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(34,211,238,0.07) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#0a0906', padding: '24px', position: 'relative', overflow: 'hidden' }}>
 
-      <div style={{ textAlign: 'center', marginBottom: 56, position: 'relative', zIndex: 1 }}>
+      {/* Atmospheric background orbs */}
+      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', width: 600, height: 600, top: '-150px', left: '-100px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(245,158,11,0.16) 0%, transparent 65%)', filter: 'blur(40px)', animation: 'orbFloat 14s ease-in-out infinite' }} />
+        <div style={{ position: 'absolute', width: 400, height: 400, bottom: '-100px', right: '-80px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(217,119,6,0.14) 0%, transparent 65%)', filter: 'blur(40px)', animation: 'orbFloat 18s ease-in-out infinite reverse' }} />
+        <div style={{ position: 'absolute', width: 300, height: 300, top: '40%', left: '60%', borderRadius: '50%', background: 'radial-gradient(circle, rgba(245,158,11,0.07) 0%, transparent 65%)', filter: 'blur(60px)', animation: 'orbFloat 22s ease-in-out infinite' }} />
+      </div>
+
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: 52, position: 'relative', zIndex: 1 }}>
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 8,
-          background: 'rgba(34,211,238,0.1)', border: '1px solid rgba(34,211,238,0.3)',
-          borderRadius: 999, padding: '6px 18px', marginBottom: 28,
+          background: 'rgba(245,158,11,0.12)', border: '1px solid rgba(245,158,11,0.35)',
+          borderRadius: 999, padding: '6px 20px', marginBottom: 30,
         }}>
-          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#22d3ee', display: 'inline-block' }} />
-          <span style={{ color: '#22d3ee', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>PORTFOLIO</span>
+          <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#f59e0b', display: 'inline-block', boxShadow: '0 0 8px rgba(245,158,11,0.8)', animation: 'pulse 2s infinite' }} />
+          <span style={{ color: '#f59e0b', fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>Security Portfolio</span>
         </div>
 
         <h1 style={{
-          fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 800,
-          background: 'linear-gradient(135deg, #f1f5f9, #94a3b8)',
+          fontSize: 'clamp(30px, 5vw, 54px)', fontWeight: 800,
+          background: 'linear-gradient(135deg, #faf5eb 0%, #d6c9a8 60%, #f59e0b 100%)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-          margin: '0 0 12px', letterSpacing: '-1px',
+          margin: '0 0 10px', letterSpacing: '-1.5px', lineHeight: 1.1,
         }}>
           {personal.name}
         </h1>
-        <p style={{ color: '#64748b', fontSize: 16, margin: 0 }}>
+        <p style={{ color: '#9a7c50', fontSize: 16, margin: '0 0 6px', fontWeight: 400 }}>
           {personal.title}
+        </p>
+        <p style={{ color: '#5c3d1e', fontSize: 14, margin: 0 }}>
+          {personal.location}
         </p>
       </div>
 
-      <p style={{ color: '#475569', fontSize: 15, marginBottom: 40, position: 'relative', zIndex: 1 }}>
-        Choose your preferred theme
+      <p style={{ color: '#7c5c3a', fontSize: 14, marginBottom: 36, position: 'relative', zIndex: 1, letterSpacing: 1, textTransform: 'uppercase', fontWeight: 600 }}>
+        Choose Your Experience
       </p>
 
-      <div style={{
-        display: 'flex', gap: 24, flexWrap: 'wrap', justifyContent: 'center',
-        position: 'relative', zIndex: 1,
-      }}>
-        {/* Dark theme card */}
+      {/* Theme cards */}
+      <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', justifyContent: 'center', position: 'relative', zIndex: 1 }}>
+
+        {/* Dark card */}
         <button
           onClick={() => choose('dark')}
           style={{
-            background: 'rgba(15,23,42,0.9)', border: '1px solid rgba(34,211,238,0.3)',
-            borderRadius: 20, padding: '32px 40px', cursor: 'pointer',
-            width: 220, transition: 'all 0.2s', textAlign: 'center',
-            boxShadow: '0 0 40px rgba(34,211,238,0.1)',
+            background: 'rgba(25,18,8,0.95)',
+            border: '1px solid rgba(245,158,11,0.3)',
+            borderRadius: 20, padding: '36px 44px', cursor: 'pointer',
+            width: 230, transition: 'all 0.25s', textAlign: 'center',
+            boxShadow: '0 0 50px rgba(245,158,11,0.08), 0 8px 32px rgba(0,0,0,0.5)',
+            backdropFilter: 'blur(12px)',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'rgba(34,211,238,0.8)'
-            e.currentTarget.style.transform = 'translateY(-4px)'
-            e.currentTarget.style.boxShadow = '0 0 50px rgba(34,211,238,0.25)'
+            e.currentTarget.style.borderColor = 'rgba(245,158,11,0.8)'
+            e.currentTarget.style.transform = 'translateY(-6px)'
+            e.currentTarget.style.boxShadow = '0 0 60px rgba(245,158,11,0.22), 0 16px 40px rgba(0,0,0,0.5)'
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.borderColor = 'rgba(34,211,238,0.3)'
+            e.currentTarget.style.borderColor = 'rgba(245,158,11,0.3)'
             e.currentTarget.style.transform = 'translateY(0)'
-            e.currentTarget.style.boxShadow = '0 0 40px rgba(34,211,238,0.1)'
+            e.currentTarget.style.boxShadow = '0 0 50px rgba(245,158,11,0.08), 0 8px 32px rgba(0,0,0,0.5)'
           }}
         >
-          <div style={{ fontSize: 42, marginBottom: 16 }}>🌙</div>
-          <div style={{ color: '#f1f5f9', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>Dark</div>
-          <div style={{ color: '#64748b', fontSize: 13, lineHeight: 1.5 }}>Easy on the eyes · Security aesthetic</div>
+          <div style={{ fontSize: 44, marginBottom: 16 }}>🌑</div>
+          <div style={{ color: '#faf5eb', fontWeight: 800, fontSize: 20, marginBottom: 8, letterSpacing: '-0.5px' }}>Dark</div>
+          <div style={{ color: '#9a7c50', fontSize: 13, lineHeight: 1.6, marginBottom: 22 }}>
+            Atmospheric · Gold accents<br />Easy on the eyes
+          </div>
           <div style={{
-            marginTop: 20, background: 'linear-gradient(90deg, #22d3ee, #3b82f6)',
-            color: '#000', padding: '8px 20px', borderRadius: 8,
-            fontSize: 13, fontWeight: 700,
+            background: 'linear-gradient(90deg, #f59e0b, #d97706)',
+            color: '#000', padding: '10px 24px', borderRadius: 10,
+            fontSize: 13, fontWeight: 800, letterSpacing: 0.5,
           }}>
-            Choose Dark
+            Choose Dark →
           </div>
         </button>
 
-        {/* Light theme card */}
+        {/* Light card */}
         <button
           onClick={() => choose('light')}
           style={{
-            background: '#ffffff', border: '1px solid #e2e8f0',
-            borderRadius: 20, padding: '32px 40px', cursor: 'pointer',
-            width: 220, transition: 'all 0.2s', textAlign: 'center',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.15)',
+            background: 'rgba(255,253,248,0.97)',
+            border: '1px solid rgba(180,83,9,0.2)',
+            borderRadius: 20, padding: '36px 44px', cursor: 'pointer',
+            width: 230, transition: 'all 0.25s', textAlign: 'center',
+            boxShadow: '0 0 50px rgba(180,83,9,0.06), 0 8px 32px rgba(180,83,9,0.12)',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.borderColor = '#0ea5e9'
-            e.currentTarget.style.transform = 'translateY(-4px)'
-            e.currentTarget.style.boxShadow = '0 8px 40px rgba(14,165,233,0.2)'
+            e.currentTarget.style.borderColor = 'rgba(180,83,9,0.7)'
+            e.currentTarget.style.transform = 'translateY(-6px)'
+            e.currentTarget.style.boxShadow = '0 0 60px rgba(180,83,9,0.15), 0 16px 40px rgba(180,83,9,0.18)'
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.borderColor = '#e2e8f0'
+            e.currentTarget.style.borderColor = 'rgba(180,83,9,0.2)'
             e.currentTarget.style.transform = 'translateY(0)'
-            e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.15)'
+            e.currentTarget.style.boxShadow = '0 0 50px rgba(180,83,9,0.06), 0 8px 32px rgba(180,83,9,0.12)'
           }}
         >
-          <div style={{ fontSize: 42, marginBottom: 16 }}>☀️</div>
-          <div style={{ color: '#0f172a', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>Light</div>
-          <div style={{ color: '#64748b', fontSize: 13, lineHeight: 1.5 }}>Clean & professional · Print-ready</div>
+          <div style={{ fontSize: 44, marginBottom: 16 }}>☀️</div>
+          <div style={{ color: '#1c0f00', fontWeight: 800, fontSize: 20, marginBottom: 8, letterSpacing: '-0.5px' }}>Light</div>
+          <div style={{ color: '#7c5c3a', fontSize: 13, lineHeight: 1.6, marginBottom: 22 }}>
+            Warm cream · Amber tones<br />Clean & professional
+          </div>
           <div style={{
-            marginTop: 20, background: 'linear-gradient(90deg, #0369a1, #1d4ed8)',
-            color: '#fff', padding: '8px 20px', borderRadius: 8,
-            fontSize: 13, fontWeight: 700,
+            background: 'linear-gradient(90deg, #b45309, #92400e)',
+            color: '#fff', padding: '10px 24px', borderRadius: 10,
+            fontSize: 13, fontWeight: 800, letterSpacing: 0.5,
           }}>
-            Choose Light
+            Choose Light →
           </div>
         </button>
       </div>
 
-      <p style={{ color: '#1e293b', fontSize: 12, marginTop: 40, position: 'relative', zIndex: 1 }}>
+      <p style={{ color: '#3d2810', fontSize: 12, marginTop: 44, position: 'relative', zIndex: 1, letterSpacing: 0.5 }}>
         You can switch anytime using the toggle in the menu
       </p>
+
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245,158,11,0.5); }
+          50% { opacity: 0.6; box-shadow: 0 0 0 8px rgba(245,158,11,0); }
+        }
+        @keyframes orbFloat {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(25px, -35px) scale(1.04); }
+          66% { transform: translate(-18px, 22px) scale(0.97); }
+        }
+      `}</style>
     </div>
   )
 }

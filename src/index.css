@@ -4,15 +4,135 @@
   html {
     scroll-behavior: smooth;
   }
+
   body {
-    background-color: #030712;
-    color: #f1f5f9;
+    background-color: #0a0906;
+    color: #faf5eb;
     font-family: system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     margin: 0;
+    /* Smooth theme transitions — no flash */
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
+
   #root {
     width: 100%;
     text-align: left;
   }
+
+  /* Light theme body */
+  [data-theme='light'] body {
+    background-color: #faf7f0;
+    color: #1c0f00;
+  }
+}
+
+/* ─── Global atmospheric background ─── */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Dark amber glows */
+[data-theme='dark'] .page-bg,
+:not([data-theme]) .page-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 5%, rgba(245,158,11,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 95%, rgba(217,119,6,0.11) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 60% at 50% 100%, rgba(180,83,9,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 80% 20%, rgba(245,158,11,0.06) 0%, transparent 50%);
+}
+
+/* Light warm glows */
+[data-theme='light'] .page-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 5%, rgba(180,83,9,0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 95%, rgba(146,64,14,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 60% at 50% 100%, rgba(180,83,9,0.06) 0%, transparent 50%);
+}
+
+/* ─── Floating orbs animation ─── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: floatOrb 12s ease-in-out infinite;
+  opacity: 0;
+}
+
+[data-theme='dark'] .orb,
+:not([data-theme]) .orb {
+  opacity: 1;
+}
+
+[data-theme='light'] .orb {
+  opacity: 0.6;
+}
+
+.orb-1 {
+  width: 500px; height: 500px;
+  top: -120px; left: -100px;
+  background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, transparent 70%);
+  animation-delay: 0s;
+  animation-duration: 14s;
+}
+
+.orb-2 {
+  width: 400px; height: 400px;
+  bottom: 10%; right: -80px;
+  background: radial-gradient(circle, rgba(217,119,6,0.15) 0%, transparent 70%);
+  animation-delay: -5s;
+  animation-duration: 16s;
+}
+
+.orb-3 {
+  width: 300px; height: 300px;
+  top: 45%; left: 40%;
+  background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+  animation-delay: -8s;
+  animation-duration: 20s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -40px) scale(1.05); }
+  66%       { transform: translate(-20px, 25px) scale(0.97); }
+}
+
+/* ─── Section separators ─── */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb,
+:not([data-theme]) ::-webkit-scrollbar-thumb {
+  background: rgba(245,158,11,0.3);
+  border-radius: 3px;
+}
+
+[data-theme='light'] ::-webkit-scrollbar-thumb {
+  background: rgba(180,83,9,0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover { background: rgba(245,158,11,0.6); }
+
+/* ─── Pulse animation ─── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245,158,11,0.4); }
+  50%       { opacity: 0.6; box-shadow: 0 0 0 6px rgba(245,158,11,0); }
+}
+
+/* ─── Selection color ─── */
+::selection {
+  background: rgba(245,158,11,0.3);
+  color: #faf5eb;
 }

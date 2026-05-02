@@ -18,12 +18,25 @@ const ThemeContext = createContext<ThemeContextType>({
   setHasChosen: () => {},
 })
 
+function applyBodyTheme(t: Theme) {
+  document.body.style.backgroundColor = themes[t].bg
+  document.body.style.color = themes[t].text
+  document.documentElement.setAttribute('data-theme', t)
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const stored = localStorage.getItem('theme') as Theme | null
-  const [theme, setThemeState] = useState<Theme>(stored || 'dark')
+  const initial: Theme = stored || 'dark'
+
+  // Apply synchronously before first render to prevent flash
+  applyBodyTheme(initial)
+
+  const [theme, setThemeState] = useState<Theme>(initial)
   const [hasChosen, setHasChosenState] = useState<boolean>(!!stored)
 
   const setTheme = (t: Theme) => {
+    // Update DOM first, then state — eliminates the flash
+    applyBodyTheme(t)
     setThemeState(t)
     localStorage.setItem('theme', t)
   }
@@ -33,8 +46,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
-    document.body.style.background = themes[theme].bg
-    document.body.style.color = themes[theme].text
+    applyBodyTheme(theme)
   }, [theme])
 
   return (

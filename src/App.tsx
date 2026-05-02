@@ -17,7 +17,14 @@ function Portfolio() {
   if (!hasChosen) return <ThemeSelector />
 
   return (
-    <div style={{ background: tokens.bg, minHeight: '100vh', transition: 'background 0.3s, color 0.3s' }}>
+    <div style={{ background: tokens.bg, minHeight: '100vh', transition: 'background-color 0.35s ease, color 0.35s ease', position: 'relative' }}>
+      {/* Atmospheric background — fixed, behind all content */}
+      <div className="page-bg">
+        <div className="orb orb-1" />
+        <div className="orb orb-2" />
+        <div className="orb orb-3" />
+      </div>
+
       <Navbar />
       <Hero />
       <Skills />
