@@ -27,7 +27,7 @@ export const skills = [
   },
   {
     category: 'Firewall & Network Security',
-    items: ['FortiGate Firewall Management', 'Application Filtering', 'VPN Group Configuration', 'Whitelist/Blacklist Policies', 'Network Segmentation', 'Network Protocol Security', 'Traffic Analysis', 'Slack Alert Automation'],
+    items: ['FortiGate Firewall Management', 'pfSense Firewall', 'Application Filtering', 'VPN Group Configuration', 'Whitelist/Blacklist Policies', 'Network Segmentation', 'Network Protocol Security', 'Traffic Analysis', 'Slack Alert Automation'],
   },
   {
     category: 'IT Infrastructure & Operations',
