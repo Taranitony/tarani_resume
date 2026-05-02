@@ -8,34 +8,38 @@ export const personal = {
   linkedin: 'https://linkedin.com/in/tarani-antony-8a2013205',
   github: 'https://github.com/Tarani07',
   summary:
-    'Award-winning, security-focused IT professional with 4+ years of experience in endpoint hardening, firewall management, identity & access management, and SOC operations. Recognized as a Rising Star for delivering high-impact security initiatives within the first year. Independently engineered a suite of GenAI-powered security tools — including a real-time fleet monitoring platform, automated identity auditing across 60 SaaS tools, and SaaS spend intelligence — replacing commercial tooling and demonstrating a Security-as-Code mindset. Managed 3,000+ endpoints and supported 1,000+ users across multi-site operations.',
+    'IT professional with 4+ years in endpoint security, identity management, and firewall operations. I build my own security tools using AI to automate what others do manually — from patch management to access audits. Currently transitioning into a dedicated security role.',
   targetRoles: ['SOC Analyst', 'Security Engineer', 'Security Operations Engineer'],
 }
 
 export const skills = [
   {
     category: 'Security Operations',
-    items: ['SOC Operations', 'SIEM & Log Analysis', 'DLP Planning', 'Anomaly Detection', 'Threat Monitoring', 'Incident Response', 'Shadow IT Discovery', 'Risk Assessment', 'IT Audit'],
+    items: ['SOC Operations', 'SIEM & Log Analysis', 'DLP Planning & Roadmapping', 'Anomaly Detection', 'Threat Monitoring', 'Incident Response', 'Shadow IT Discovery', 'Risk Assessment', 'IT Audit', 'Vulnerability Management'],
   },
   {
-    category: 'Firewall & Network',
-    items: ['FortiGate Management', 'Application Filtering', 'VPN Configuration', 'Whitelist/Blacklist Policies', 'Network Segmentation', 'Network Protocol Security', 'Slack Alert Automation'],
-  },
-  {
-    category: 'Identity & Access',
-    items: ['JumpCloud', 'Google Workspace', 'Microsoft 365', 'Access Reviews', 'Identity Auditing', 'User Lifecycle Management', 'Least-Privilege Enforcement', 'HRMS API Integration'],
+    category: 'Identity & Access Management',
+    items: ['JumpCloud', 'Google Workspace Admin', 'Microsoft 365', 'User Provisioning & Deprovisioning', 'Access Reviews', 'Least-Privilege Enforcement', 'HRMS API Integration', 'SSO & MFA Management'],
   },
   {
     category: 'Endpoint Security & EDR',
-    items: ['Jamf Protect (EDR)', 'Jamf Trust (ZTNA)', 'eScan', 'MDM Policy Enforcement', 'Patch Management', 'macOS/Windows Hardening', 'FileVault', 'BitLocker', 'Gatekeeper', 'SIP'],
+    items: ['Jamf Protect (EDR)', 'Jamf Trust (ZTNA)', 'eScan', 'MDM Policy Enforcement', 'Patch Management', 'macOS/Windows Hardening', 'FileVault', 'BitLocker', 'Gatekeeper', 'SIP Enforcement'],
   },
   {
-    category: 'Cloud & SaaS Security',
-    items: ['Google Workspace', 'Microsoft 365', 'SaaS Spend Management', 'Software Onboarding Controls', 'Asset Inventory', 'Shadow IT Discovery'],
+    category: 'Firewall & Network Security',
+    items: ['FortiGate Firewall Management', 'Application Filtering', 'VPN Group Configuration', 'Whitelist/Blacklist Policies', 'Network Segmentation', 'Network Protocol Security', 'Traffic Analysis', 'Slack Alert Automation'],
   },
   {
-    category: 'Security Engineering',
-    items: ['GenAI Tool Development', 'Python', 'Linux', 'React/TypeScript', 'Supabase', 'Claude AI API', 'Slack Webhooks', 'REST API Integration', 'ISO 27001', 'SOC 2'],
+    category: 'IT Infrastructure & Operations',
+    items: ['IT Infrastructure Management', 'Asset Management', 'OS Administration (macOS/Windows)', 'System Maintenance & Optimization', 'System Planning & Capacity Management', 'Software Onboarding & Offboarding', 'Operational Management', 'Multi-site IT Support'],
+  },
+  {
+    category: 'Cloud & SaaS Governance',
+    items: ['Google Workspace', 'Microsoft 365 (Exam 70-346)', 'SaaS Spend Management', 'Shadow IT Discovery', 'Software Asset Inventory', 'Procurement Controls', 'Subscription Lifecycle Management'],
+  },
+  {
+    category: 'Security Engineering & AI',
+    items: ['GenAI-Assisted Tool Development', 'Prompt Engineering', 'AI-Driven Problem Solving', 'Bash & Shell Scripting', 'Python Scripting', 'API & Zapier Automation', 'Workflow Automation', 'React/TypeScript', 'Supabase', 'Claude AI API', 'REST API Integration', 'Linux', 'ISO 27001', 'SOC 2'],
   },
 ]
 
@@ -45,16 +49,18 @@ export const experience = [
     company: 'SurveySparrow',
     location: 'Chennai, India',
     period: 'Feb 2024 – Present',
-    award: 'Rising Star Award 2024',
+    award: 'Rising Star Award 2024 · Dashing Debut Award',
     highlights: [
-      'Engineered least-privilege access policies for 300 users via JumpCloud with provisioning, ABM, custom policies, and script injection workflows.',
-      'Built GenAI-powered Access Review Tool replacing manual IGA processes across 60 SaaS tools — reducing quarterly audit cycle from 4+ weeks to hours.',
-      'Hardened 320 endpoints (300 Mac + 20 Windows) using Jamf Protect (EDR) and JumpCloud MDM.',
-      'Deployed Jamf Trust for Zero Trust Network Access (ZTNA), validating device compliance before granting network access.',
-      'Architected Installomator patch pipeline via JumpCloud scripting, replacing ManageEngine Desktop Central across 300 Mac endpoints.',
-      'Built SpendNest SaaS spend intelligence tool, surfacing unauthorized apps and eliminating shadow IT.',
-      'Leading DLP roadmap design aligned to ISO 27001 across endpoint, identity, and SaaS layers.',
-      'Administered FortiGate firewall with weekly policy reviews, app filters, VPN groups, and Slack alert automation.',
+      'Led full MDM migration from Hexnode to JumpCloud — enrolled all 320 endpoints, re-established device policies, and ensured zero downtime during transition.',
+      'Integrated all company applications (including internal tools) with SSO via JumpCloud, centralising authentication and reducing credential sprawl.',
+      'Introduced and enforced organisation-wide security policies via JumpCloud Custom Policies and Command framework, including automated OS update enforcement.',
+      'Built Installomator — an in-house macOS patch management pipeline via JumpCloud scripting — eliminating the need for paid patch management software and closing CVE windows across 300 Mac endpoints. Windows endpoints managed via JumpCloud Custom Policies.',
+      'Designed and built an IGA-equivalent Access Review Tool: integrates HRMS exit data, performs automated access reviews across 60+ SaaS apps via API/CSV, flags active accounts of departed users, and generates SOC 2 / ISO 27001-ready audit reports — replacing manual 4-week review cycles.',
+      'Built SparrowVision — a real-time fleet monitoring platform tracking RAM usage, installed apps, browser activity, asset location, USB/port connections, crash reports, login/shutdown/restart status, and full system health — giving IT complete device visibility.',
+      'Created Bash and Windows scripts to detect unauthorised software installations by developers with root access, with instant Slack notifications — mitigating insider risk and software supply chain vulnerabilities. Complemented by Jamf Protect for EDR-level detection.',
+      'Built SpendNest — a SaaS spend intelligence tool that maps subscription costs per business unit via HRMS integration, auto-syncs on project changes, and surfaces shadow IT and budget overruns in real time.',
+      'Administered FortiGate firewall with weekly reviews, application filtering, VPN group management, whitelist/blacklist enforcement, and Slack-based downtime alerting.',
+      'Leading DLP roadmap aligned to ISO 27001 — classifying data flows, enforcing endpoint and SaaS controls, and implementing DLP best practices across the organisation.',
     ],
   },
   {
@@ -182,14 +188,14 @@ export const awards = [
     title: 'Rising Star Award',
     date: 'March 2024',
     company: 'SurveySparrow',
-    description: 'Awarded for dedication, passion, and excellence in role. Recognized as a top-tier performer within the first year.',
+    description: 'Awarded for AI implementation and security tool development — recognised for independently building a suite of GenAI-powered tools that replaced commercial software and elevated the organisation\'s security posture.',
     icon: '⭐',
   },
   {
     title: 'Dashing Debut Award',
     date: '2024',
     company: 'SurveySparrow',
-    description: 'Recognized as a "rookie rockstar" for high impact and exceptional ramp-up speed in a security-critical role.',
+    description: 'Recognised for successfully leading the MDM migration from Hexnode to JumpCloud and delivering high-impact IT operations within the first few months of joining.',
     icon: '🚀',
   },
 ]
