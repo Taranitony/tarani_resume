@@ -198,6 +198,20 @@ export const awards = [
     description: 'Recognised for leading the MDM migration from Hexnode to JumpCloud and delivering high-impact IT operations within the first few months of joining.',
     icon: '🚀',
   },
+  {
+    title: 'The Techno Geek',
+    date: '2023',
+    company: 'Skill Lync',
+    description: 'Certificate of Appreciation awarded by the CFO for performing above and beyond capabilities — recognised for the successful implementation of Synology NAS storage infrastructure, ensuring maximum productivity across the organisation.',
+    icon: '🏆',
+  },
+  {
+    title: 'Bringing It Beyond',
+    date: '2022',
+    company: 'Skill Lync',
+    description: 'Certificate of Recognition for consistently delivering logical solutions in challenging situations, never compromising on quality, and constantly seeking to enhance and improve past work.',
+    icon: '🎯',
+  },
 ]
 
 export const education = {
