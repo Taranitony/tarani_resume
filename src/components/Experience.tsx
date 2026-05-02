@@ -64,11 +64,20 @@ export default function Experience() {
                   </div>
 
                   <ul style={{ margin: '16px 0 0', padding: '0 0 0 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-                    {job.highlights.map((h, j) => (
+                    {job.highlights.map((h, j) => {
+                      const colonIdx = h.indexOf(':')
+                      const hasTitle = colonIdx > 0 && colonIdx < 50
+                      return (
                       <li key={j} style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-                        {h}
+                        {hasTitle ? (
+                          <>
+                            <span style={{ color: '#22d3ee', fontWeight: 700 }}>{h.slice(0, colonIdx)}</span>
+                            <span>{h.slice(colonIdx)}</span>
+                          </>
+                        ) : h}
                       </li>
-                    ))}
+                      )
+                    })}
                   </ul>
                 </div>
               </div>
