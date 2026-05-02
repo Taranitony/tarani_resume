@@ -75,7 +75,7 @@ export const experience = [
       'Ticketing System: Designed and launched an internal IT helpdesk using Google Forms with a built-in reporting dashboard — streamlining request tracking and reducing IT response time.',
       'Endpoint Security & Asset Management: Managed and secured 3,040 endpoints (3,000 Windows + 40 Mac) using eScan. Implemented a formal asset management and system scrap procedure to track the full hardware lifecycle across the organisation.',
       'Multi-site IT Operations: Travelled to Hyderabad to set up IT infrastructure for student labs and facilities, handling device deployment, network configuration, and security setup on-site.',
-      'Firewall & Network Security: Administered FortiGate firewall across multiple locations with application filtering, VPN access controls, and Slack-integrated downtime alerting for real-time incident visibility.',
+      'Firewall & Network Security: Administered pfSense firewall across multiple locations with application filtering, VPN access controls, and traffic policy enforcement for real-time network security and incident visibility.',
     ],
   },
 ]
