@@ -201,7 +201,7 @@ export const awards = [
 ]
 
 export const education = {
-  degree: 'Master of Science (M.Sc.) — Physics',
+  degree: 'Master of Science (M.Sc.) — Physics (IoT)',
   college: "St. Joseph's College",
   location: 'Tiruchirappalli, Tamil Nadu',
   year: '2020',
