@@ -2,7 +2,7 @@ import { personal } from '../data/resume'
 import { useTheme } from '../lib/ThemeContext'
 
 export default function Hero() {
-  const { tokens, theme } = useTheme()
+  const { tokens } = useTheme()
 
   return (
     <section id="about" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', padding: '120px 24px 80px' }}>
